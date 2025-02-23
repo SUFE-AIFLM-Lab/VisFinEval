@@ -1,5 +1,3 @@
-# README.md
-
 # VisFinEval: A Chinese Financial Knowledge Benchmark for Visual Language Models
 
 ## Table of Contents <a name="toc"></a>
