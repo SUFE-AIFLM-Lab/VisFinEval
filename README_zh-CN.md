@@ -1,6 +1,6 @@
 # VisFinEval: 一个用于评估视觉语言模型的中文金融知识基准
 
-## Table of Contents <a name="toc"></a>
+## 目录 <a name="toc"></a>
 
 1. [介绍](#intro)
 2. [数据集](#comparison)
