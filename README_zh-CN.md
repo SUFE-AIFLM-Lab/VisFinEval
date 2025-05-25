@@ -142,7 +142,7 @@ VisFinEval/
 - **下载数据集**:
 
   从以下 Google Drive 链接下载数据集：
-  https://drive.google.com/file/d/15DdloCn2GWRvyO-kieTJMiE2sMIfW4vF/view?usp=drive_link
+  [https://drive.google.com/file/d/15DdloCn2GWRvyO-kieTJMiE2sMIfW4vF/view?usp=drive_link](https://drive.google.com/file/d/1NIIZE5O6HFAS12rw160No9SUZVTpLgZK/view?usp=sharing)
 
   解压下载的文件，并将其放置在 `VisFinEval/data` 目录下。
 
