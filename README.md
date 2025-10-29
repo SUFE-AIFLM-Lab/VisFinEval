@@ -5,8 +5,10 @@
 1. [Introduction](#intro)
 2. [Dataset](#comparison)
 3. [Results](#results)
-7. [Usage](#usage)
-
+4. [Usage](#usage)
+5. [Outlook](#future)
+6. [Contact Us](#connection)
+5. [Citation](#cite)
 ---
 
 ## Introduction <a name="intro"></a>
@@ -20,7 +22,7 @@ VisFinEval is a large-scale Chinese benchmark platform designed to systematicall
 
 ##  Datasets <a name="comparison"></a>
 
-#### 1.Datasets comparison
+### Datasets comparison
 
 This table compares multiple QA datasets across various dimensions, including question types, financial capability assessment, and scale.
 
@@ -42,7 +44,7 @@ This table compares multiple QA datasets across various dimensions, including qu
 
 ---
 
-#### 2.Task Settings
+### Task Settings
 
 VisFinEval comprises three scenario categories with 15 business scenario types:
 
@@ -80,7 +82,7 @@ VisFinEval comprises three scenario categories with 15 business scenario types:
 
 ## Results <a name="results"></a>
 
-#### Model Evaluation Results
+### Model Evaluation Results
 
 | Model                          | Size    | Limit                | FDS  | CCA  | FIA  | FERI | SSSB | FIE  | FSR  | FSA  | FMSA | FSO  | FRPA | FDRI | AAA  | WA   |
 | ------------------------------ | ------- | -------------------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
@@ -114,7 +116,7 @@ VisFinEval comprises three scenario categories with 15 business scenario types:
 
 ---
 
-#### 1.Project Structure 
+### 1.Project Structure 
 
 ```
 VisFinEval/
@@ -133,7 +135,7 @@ VisFinEval/
 └── requirements.txt    					           # Dependency specifications
 ```
 
-#### 2.Installation Guide
+### 2.Installation Guide
 
 - **Clone Repository**:
 
@@ -152,7 +154,7 @@ VisFinEval/
      pip install -r requirements.txt
 ```
 
-#### 3. **Run All Evaluation Question Types**
+### 3. **Run All Evaluation Question Types**
 
 - **Using the `run_model.sh` Script to Run All Evaluation Question Types:**
 
@@ -187,9 +189,35 @@ VisFinEval/
 
 ---
 
-#### 4. **Output Results**
+### 4. **Output Results**
 
 - The evaluation results are output in the `VisFinEval/output` and `VisFinEval/logs` folders.
 - The output results are organized by question type, with each folder further categorized by model.
+
+## 🚀 Outlook <a name="future"></a>
+
+The evaluation results of FinGAIA deliver a clear message: for the financial industry, merely enhancing the knowledge base of large language models is no longer sufficient. **The key to determining whether these models can become reliable productivity tools lies in enabling them to skillfully and collaboratively use various analytical tools, just as humans do**.
+
+We plan to:
+* **Open-source the dataset**: Release **an annotated developer question set containing 150 problems**.
+* **Maintain a leaderboard**: Continuously track and showcase the performance of the world's top AI agents in the financial domain through a leaderboard.
+
+The leaderboard will be regularly updated to include more available agents. Individuals and organizations interested in agent evaluation are welcome to connect and exchange ideas.
+
+## 📫 Contact Us <a name="connection"></a>
+We sincerely invite industry peers to jointly explore innovative paradigms for the deep integration of AI and finance, and to collaboratively build a new ecosystem for intelligent finance. Please reach out via email at zhang.liwen@shufe.edu.cn.
+
+## 📚 Citation <a name="cite"></a>
+
+If you have used VisFinEval in your research, please cite our paper.
+
+```bibtex
+@article{liu2025visfineval,
+  title={VisFinEval: A Scenario-Driven Chinese Multimodal Benchmark for Holistic Financial Understanding},
+  author={Liu, Zhaowei and Guo, Xin and Xia, Haotian and Zeng, Lingfeng and Lou, Fangqi and Niu, Jinyi and Li, Mengping and Qi, Qi and Li, Jiahuan and Zhang, Wei and others},
+  journal={arXiv preprint arXiv:2508.09641},
+  year={2025}
+}
+```
 
 [Back to Top](#toc)

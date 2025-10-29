@@ -1,30 +1,32 @@
 # VisFinEval: 一个用于评估视觉语言模型的中文金融知识基准
 
-## 目录 <a name="toc"></a>
+## 📌 目录 <a name="toc"></a>
 
 1. [介绍](#intro)
 2. [数据集](#comparison)
 3. [结果](#results)
-7. [使用说明](#usage)
-
+4. [使用说明](#usage)
+5. [未来展望](#future)
+6. [联系我们](#connection)
+5. [引用](#cite)
 ---
 
-## 介绍 <a name="intro"></a>
+## 💡 介绍 <a name="intro"></a>
 
-VisFinEval 是一个大规模的中文基准测试平台，旨在系统评估多模态大语言模型（MLLMs）在真实金融业务场景中的能力表现。该数据集包含15,848组标注的问答对，覆盖8种典型金融图像模态（如K线图、财务报表等），并划分为三个递进式难度层级：金融知识与数据分析、金融分析与决策支持、金融风控与资产优化。我们对21个前沿MLLMs进行零样本测试，结果显示，尽管最佳模型Qwen-VL-max以76.3%准确率超越非专业人类表现，但在多步数值推理、业务流程理解等高级领域特定任务上仍显著落后金融专家超过14个百分点。
+VisFinEval 是一个大规模的中文金融领域多模态测试基准，旨在系统评估多模态大语言模型（MLLMs）在真实金融业务场景中的能力表现。该数据集包含15,848组标注的问答对，覆盖8种典型金融图像模态（如K线图、财务报表等），并划分为三个递进式难度层级：金融知识与数据分析、金融分析与决策支持、金融风控与资产优化。我们对21个前沿MLLMs进行零样本测试，结果显示，尽管最佳模型Qwen-VL-max以76.3%准确率超越非专业人类表现，但在多步数值推理、业务流程理解等高级领域特定任务上仍显著落后金融专家超过14个百分点。
 
 ![example]( ./frame_en.png )  
 [返回顶部](#toc)
 
 ---
 
-##  数据集 <a name="comparison"></a>
+##  📖 数据集 <a name="comparison"></a>
 
-#### 1.数据集对比
+### 数据集对比
 
 下表对比了多个问答数据集在不同维度上的表现，包括问题类型、金融能力评估和规模。
 
-| **Benchmark Name**        | **Question Type**                         | **Multi-level Difficulty** | **Scenario Depth** | **Realistic Environment Simulation** | **Official Seal Recognition** | **Financial Relationship Graph** | **Number of Financial Figure Types** | **Number of Financial Scenarios** | **Total Questions** | **Number of Evaluated Models** |
+|**基准名称**|**问题类型**|**多层次难度**|**场景深度**|**真实环境模拟**|**公章识别**|**财务关系图**|**金融人物类型数量**|**融资场景数量**|**总问题数**|**评估模型数量**|
 | ------------------------- | ----------------------------------------- | -------------------------- | ------------------ | ------------------------------------ | ----------------------------- | -------------------------------- | ------------------------------------ | --------------------------------- | ------------------- | ------------------------------ |
 | **Text-based Benchmarks** |                                           |                            |                    |                                      |                               |                                  |                                      |                                   |                     |                                |
 | FinDABench                | Open-ended                                | ✓                          | -                  | -                                    | -                             | -                                | -                                    | 5                                 | 2400                | 40                             |
@@ -42,45 +44,47 @@ VisFinEval 是一个大规模的中文基准测试平台，旨在系统评估多
 
 ---
 
-#### 2.任务设置
+### 任务设置
 
 VisFinEval 包含三类问题场景，共有 15 种业务场景类型：
 
-**场景类型**:
+#### **场景类型**:
 
-1. **金融知识数据分析（前台）** : FDS，CCA，FIA，FERI，SSSB，FIE，FSR
-2. **金融分析与业务决策（中台）**  : FSA，IAI，IA，FMSA
-3. **金融风险控制与资产优化（后台）** : FSO，FRPA，FDRI，AAA
+-**金融知识数据分析** : FDS，CCA，FIA，FERI，SSSB，FIE，FSR
 
-**问题类型分布**
+-**金融分析与业务决策**  : FSA，IAI，IA，FMSA
 
-| Scenario Depth                                    | Financial Scenario                            | Questions  |
-| ------------------------------------------------- | --------------------------------------------- | ---------- |
-| **Financial Knowledge and Data Analysis**         | Financial Data Statistics                     | 3,655      |
-|                                                   | Candlestick Chart Analysis                    | 1,124      |
-|                                                   | Financial Indicator Assessment                | 1,160      |
-|                                                   | Financial Entity Relationships Interpretation | 919        |
-|                                                   | Stock Selection Strategies Backtesting        | 719        |
-|                                                   | Financial Information Extraction              | 924        |
-|                                                   | Financial Seal Recognition                    | 199        |
-|                                                   | **All**                                       | **8,700**  |
-| **Financial Analysis and Decision Support**       | Financial Scenario Analysis                   | 2,040      |
-|                                                   | Industry Analysis and Inference               | 1,361      |
-|                                                   | Investment Analysis                           | 933        |
-|                                                   | Financial Market Sentiment Analysis           | 316        |
-|                                                   | **All**                                       | **4,650**  |
-| **Financial Risk Control and Asset Optimization** | Financial Strategy Optimization               | 111        |
-|                                                   | Financial Risk and Policy Analysis            | 181        |
-|                                                   | Financial Data Reasoning and Interpretation   | 1,839      |
-|                                                   | Asset Allocation Analysis                     | 367        |
-|                                                   | **All**                                       | **2,498**  |
-| **VisFinEval**                                    | **All**                                       | **15,848** |
+-**金融风险控制与资产优化** : FSO，FRPA，FDRI，AAA 全用中文不加缩写
+
+### **问题类型分布**：
+
+| 场景维度                                      | 金融场景                                  | 问题数量  |
+| -------------------------------------------- | --------------------------------------- | --------- |
+| **金融知识与数据分析**                          | 金融数据统计 (FDS)                        | 3,655     |
+|                                              | K线图解析 (CCA)                          | 1,124     |
+|                                              | 金融指标评估 (FIA)                       | 1,160     |
+|                                              | 金融实体关系解读 (FERI)                   | 919       |
+|                                              | 选股策略回测 (SSB)                       | 719       |
+|                                              | 金融信息抽取 (FIE)                       | 924       |
+|                                              | 金融印章识别 (FSR)                       | 199       |
+|                                              | **合计**                               | **8,700** |
+| **金融分析与决策支持**                          | 金融情景分析 (FSA)                       | 2,040     |
+|                                              | 行业分析与推断 (IAI)                     | 1,361     |
+|                                              | 投资分析 (IA)                           | 933       |
+|                                              | 金融市场情绪分析 (FMSA)                  | 316       |
+|                                              | **合计**                               | **4,650** |
+| **金融风控与资产优化**                          | 金融策略优化 (FSO)                      | 111       |
+|                                              | 金融风险与政策分析 (FRPA)                | 181       |
+|                                              | 金融数据推理与解读 (FDRI)                | 1,839     |
+|                                              | 资产配置分析 (AAA)                      | 367       |
+|                                              | **合计**                               | **2,498** |
+| **视觉金融评估体系**                           | **总计**                               | **15,848** |
 
 ---
 
-## 结果 <a name="results"></a>
+## 🏆 结果 <a name="results"></a>
 
-#### 模型评估结果
+### 模型评估结果
 
 | Model                          | Size    | Limit                | FDS  | CCA  | FIA  | FERI | SSSB | FIE  | FSR  | FSA  | FMSA | FSO  | FRPA | FDRI | AAA  | WA   |
 | ------------------------------ | ------- | -------------------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
@@ -110,11 +114,11 @@ VisFinEval 包含三类问题场景，共有 15 种业务场景类型：
 
 ---
 
-## 使用说明 <a name="usage"></a>
+## 🔧  使用说明 <a name="usage"></a>
 
 ---
 
-#### 1.项目结构 
+### 1.项目结构 
 
 ```
 VisFinEval/
@@ -133,7 +137,7 @@ VisFinEval/
 └── requirements.txt    					           # Dependency specifications
 ```
 
-#### 2.安装指南
+### 2.安装指南
 
 - **克隆仓库**:
 
@@ -152,7 +156,7 @@ VisFinEval/
  pip install -r requirements.txt
 ```
 
-#### 3. **运行所有评估问题类型**
+### 3. **运行所有评估问题类型**
 
 - **使用 `run__model.sh` 脚本运行所有评估问题类型:**
 
@@ -187,9 +191,34 @@ VisFinEval/
 
 ---
 
-#### 4. **输出结果**
+### 4. **输出结果**
 
 - 评估结果输出在 `VisFinEval/output` 和 `VisFinEval/logs` 文件夹中。
 - 输出结果按问题类型组织，每个文件夹进一步按模型分类。
+
+## 🚀 未来展望 <a name="future"></a> 
+
+FinGAIA的测试结果传递出一个清晰的信号：对于金融行业而言，单纯提升大语言模型的知识储备已不足够。**如何让模型学会像人一样熟练、协同地使用各种分析工具，才是决定其能否成为可靠生产力的关键**。
+我们计划：
+* **开放数据集**：发布 **150道带注释的开发者问题集**。
+* **维护排行榜**：以排行榜的形式，持续追踪并展示全球顶尖AI智能体在金融领域的表现。
+
+榜单会定期进行更新，纳入更多可用智能体。欢迎对智能体评测感兴趣的个人和机构联系与交流。
+
+## 📫 联系我们 <a name="connection"></a>
+诚邀业界同仁共同探索 AI 与金融深度融合的创新范式，共建智慧金融新生态，并通过邮件与zhang.liwen@shufe.edu.cn联系
+
+## 📚 引用 <a name="cite"></a> 
+
+如果您在研究中使用了VisFinEval，请引用我们的论文。
+
+```bibtex
+@article{liu2025visfineval,
+  title={VisFinEval: A Scenario-Driven Chinese Multimodal Benchmark for Holistic Financial Understanding},
+  author={Liu, Zhaowei and Guo, Xin and Xia, Haotian and Zeng, Lingfeng and Lou, Fangqi and Niu, Jinyi and Li, Mengping and Qi, Qi and Li, Jiahuan and Zhang, Wei and others},
+  journal={arXiv preprint arXiv:2508.09641},
+  year={2025}
+}
+```
 
 [返回顶部](#toc)
