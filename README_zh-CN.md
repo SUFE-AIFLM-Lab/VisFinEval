@@ -1,5 +1,5 @@
 <div align="center">
-# VisFinEval: 一个用于评估视觉语言模型的中文金融知识基准
+   <h1>VisFinEval: 一个用于评估视觉语言模型的中文金融知识基准</h1>
 <!-- 语言切换链接 -->
 
    [简体中文](./README_zh_CN.md) | [English](./README.md) 

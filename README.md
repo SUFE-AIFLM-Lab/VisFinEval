@@ -1,5 +1,6 @@
 <div align="center">
-# VisFinEval: A Chinese Financial Knowledge Benchmark for Visual Language Models
+   <h1>VisFinEval: A Chinese Financial Knowledge Benchmark for Visual Language Models</h1>
+
 <!-- 语言切换链接 -->
 
    [简体中文](./README_zh_CN.md) | [English](./README.md) 
