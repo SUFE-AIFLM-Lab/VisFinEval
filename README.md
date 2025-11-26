@@ -3,7 +3,7 @@
 
 <!-- 语言切换链接 -->
 
-   [简体中文](./README_zh_CN.md) | [English](./README.md) 
+   [简体中文](./README_zh-CN.md) | [English](./README.md) 
 </div>
 
 ## Table of Contents <a name="toc"></a>
